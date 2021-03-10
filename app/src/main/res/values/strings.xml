@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">KMJHomeWork</string>
+    <string name="search_info_str">search for name</string>
+    <string name="search_str">SEARCH</string>
+
+    <string name="detail_search_str">DETAILED SEARCH</string>
+
+    <string name="beer_name_str">beer name</string>
+    <string name="beer_tagline_str">tagline</string>
+    <string name="beer_abv_str">ABV</string>
+    <string name="beer_ibu_str">IBU</string>
+    <string name="beer_ebc_str">EBC</string>
+    <string name="beer_srm_str">SRM</string>
+    <string name="beer_first_brewed_str">First Brewed</string>
+    <string name="beer_malt_str">Malt</string>
+    <string name="beer_hops_str">Hops</string>
+    <string name="beer_ingredient_str">Ingredient</string>
+    <string name="beer_yeast_str">Yeast</string>
+    <string name="description_str">Description</string>
+    <string name="food_pairing_str">Food Pairing</string>
+
+    <string name="slash_str">/</string>
+
+</resources>

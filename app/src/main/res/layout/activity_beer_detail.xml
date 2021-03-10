@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.mj.kmjhomework.view.MainViewModel" />
+
+    </data>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.BeerDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".view.BeerDetailActivity">
+
+        <ImageView
+            android:id="@+id/ivWorkspaceImage"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setImage="@{vm.beerDetails.image_url}"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="start"
+            android:text="@{vm.beerDetails.name}"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivWorkspaceImage"
+            app:layout_constraintTop_toBottomOf="@+id/ivWorkspaceImage"
+            tools:text="@string/beer_name_str" />
+
+        <TextView
+            android:id="@+id/tvTagline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{vm.beerDetails.tagline}"
+            android:gravity="start"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            tools:text="@string/beer_tagline_str" />
+
+        <TextView
+            android:id="@+id/tvAbv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvTagline"
+            app:layout_constraintTop_toBottomOf="@+id/tvTagline"
+            android:text="@string/beer_abv_str" />
+
+        <TextView
+            android:id="@+id/tvAbvValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAbv"
+            app:layout_constraintStart_toEndOf="@+id/tvAbv"
+            app:layout_constraintTop_toTopOf="@+id/tvAbv"
+            tools:text="@string/beer_abv_str"
+            android:text="@{Float.toString(vm.beerDetails.abv)}"/>
+
+        <TextView
+            android:id="@+id/tvIbu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvTagline"
+            app:layout_constraintTop_toBottomOf="@+id/tvAbv"
+            android:text="@string/beer_ibu_str" />
+
+        <TextView
+            android:id="@+id/tvIbuValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvIbu"
+            app:layout_constraintStart_toEndOf="@+id/tvIbu"
+            app:layout_constraintTop_toTopOf="@+id/tvIbu"
+            tools:text="@string/beer_ibu_str"
+            android:text="@{Float.toString(vm.beerDetails.ibu)}"/>
+
+        <TextView
+            android:id="@+id/tvEbc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvTagline"
+            app:layout_constraintTop_toBottomOf="@+id/tvIbu"
+            android:text="@string/beer_ebc_str" />
+
+        <TextView
+            android:id="@+id/tvEbcValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvEbc"
+            app:layout_constraintStart_toEndOf="@+id/tvEbc"
+            app:layout_constraintTop_toTopOf="@+id/tvEbc"
+            tools:text="@string/beer_ebc_str"
+            android:text="@{Float.toString(vm.beerDetails.ebc)}" />
+
+        <TextView
+            android:id="@+id/tvSlash"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="start"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvEbc"
+            app:layout_constraintStart_toEndOf="@+id/tvEbcValue"
+            app:layout_constraintTop_toTopOf="@+id/tvEbc"
+            android:text="@string/slash_str" />
+
+        <TextView
+            android:id="@+id/tvSrm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvEbc"
+            app:layout_constraintStart_toEndOf="@+id/tvSlash"
+            app:layout_constraintTop_toTopOf="@+id/tvEbc"
+            android:text="@string/beer_srm_str" />
+
+        <TextView
+            android:id="@+id/tvSrmValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSrm"
+            app:layout_constraintStart_toEndOf="@+id/tvSrm"
+            app:layout_constraintTop_toTopOf="@+id/tvSrm"
+            tools:text="@string/beer_srm_str"
+            android:text="@{Float.toString(vm.beerDetails.srm)}"/>
+
+        <TextView
+            android:id="@+id/tvFirstBrewed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvTagline"
+            app:layout_constraintTop_toBottomOf="@+id/tvEbc"
+            android:text="@string/beer_first_brewed_str" />
+
+        <TextView
+            android:id="@+id/tvFirstBrewedValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFirstBrewed"
+            app:layout_constraintStart_toEndOf="@+id/tvFirstBrewed"
+            app:layout_constraintTop_toTopOf="@+id/tvFirstBrewed"
+            tools:text="@string/beer_first_brewed_str"
+            android:text="@{vm.beerDetails.first_brewed}"/>
+
+        <TextView
+            android:id="@+id/tvMalt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvTagline"
+            app:layout_constraintTop_toBottomOf="@+id/tvFirstBrewed"
+            android:text="@string/beer_malt_str" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMalt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvMalt"
+            app:layout_constraintTop_toBottomOf="@+id/tvMalt"
+            tools:listitem="@layout/item_ingredients"
+            app:setIngredients="@{vm.beerDetails.ingredients.malt}"/>
+
+        <TextView
+            android:id="@+id/tvHops"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvTagline"
+            app:layout_constraintTop_toBottomOf="@+id/rvMalt"
+            android:text="@string/beer_hops_str" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHops"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvHops"
+            app:layout_constraintTop_toBottomOf="@+id/tvHops"
+            tools:listitem="@layout/item_ingredient_hops"
+            app:setIngredientHops="@{vm.beerDetails.ingredients.hops}"/>
+
+        <TextView
+            android:id="@+id/tvYeast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvTagline"
+            app:layout_constraintTop_toBottomOf="@+id/rvHops"
+            android:text="@string/beer_yeast_str" />
+
+        <TextView
+            android:id="@+id/tvYeastValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="start"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvYeast"
+            app:layout_constraintStart_toEndOf="@+id/tvYeast"
+            app:layout_constraintTop_toTopOf="@+id/tvYeast"
+            tools:text="@string/beer_yeast_str"
+            android:text="@{vm.beerDetails.ingredients.yeast}"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvYeast"
+            android:text="@string/description_str" />
+
+        <TextView
+            android:id="@+id/tvDescriptionValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="start"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            tools:text="@string/description_str"
+            android:text="@{vm.beerDetails.description}" />
+
+        <TextView
+            android:id="@+id/tvFoodPairing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionValue"
+            android:text="@string/food_pairing_str" />
+
+        <TextView
+            android:id="@+id/tvFoodPairingValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="start"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvFoodPairing"
+            tools:text="@string/food_pairing_str"
+            app:food="@{vm.beerDetails.food_pairing}"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

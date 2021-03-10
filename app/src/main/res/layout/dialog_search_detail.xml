@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvAbv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:gravity="start"
+        android:text="@string/beer_abv_str"
+        android:textColor="@color/colorBlack"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rsAbv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvAbvRange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="start"
+        android:text="0 - 15"
+        android:textColor="@color/colorBlack"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAbv"
+        app:layout_constraintStart_toEndOf="@+id/tvAbv"
+        app:layout_constraintTop_toTopOf="@+id/tvAbv" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/rsAbv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="15"
+        app:layout_constraintBottom_toTopOf="@+id/tvIbu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvAbv"
+        app:layout_constraintTop_toBottomOf="@+id/tvAbv"
+        app:values="@array/initial_slider_values_abv" />
+
+
+    <TextView
+        android:id="@+id/tvIbu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="start"
+        android:text="@string/beer_ibu_str"
+        android:textColor="@color/colorBlack"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rsIbu"
+        app:layout_constraintStart_toStartOf="@+id/tvAbv"
+        app:layout_constraintTop_toBottomOf="@+id/rsAbv" />
+
+    <TextView
+        android:id="@+id/tvIbuRange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="start"
+        android:text="0 - 100"
+        android:textColor="@color/colorBlack"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIbu"
+        app:layout_constraintStart_toEndOf="@+id/tvIbu"
+        app:layout_constraintTop_toTopOf="@+id/tvIbu" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/rsIbu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:stepSize="10"
+        android:valueFrom="0"
+        android:valueTo="100"
+        app:layout_constraintBottom_toTopOf="@+id/tvEbc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvAbv"
+        app:layout_constraintTop_toBottomOf="@+id/tvIbu"
+        app:values="@array/initial_slider_values_ibu" />
+
+
+    <TextView
+        android:id="@+id/tvEbc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="start"
+        android:text="@string/beer_ebc_str"
+        android:textColor="@color/colorBlack"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rsEbc"
+        app:layout_constraintStart_toStartOf="@+id/tvAbv"
+        app:layout_constraintTop_toBottomOf="@+id/rsIbu" />
+
+    <TextView
+        android:id="@+id/tvEbcRange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="start"
+        android:text="0 - 80"
+        android:textColor="@color/colorBlack"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEbc"
+        app:layout_constraintStart_toEndOf="@+id/tvEbc"
+        app:layout_constraintTop_toTopOf="@+id/tvEbc" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/rsEbc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:stepSize="10"
+        android:valueFrom="0"
+        android:valueTo="80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvAbv"
+        app:layout_constraintTop_toBottomOf="@+id/tvEbc"
+        app:values="@array/initial_slider_values_ebc" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

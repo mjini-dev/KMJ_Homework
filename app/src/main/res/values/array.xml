@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="initial_slider_values_abv">
+        <item>0</item>
+        <item>15</item>
+    </array>
+
+    <array name="initial_slider_values_ibu">
+        <item>0</item>
+        <item>100</item>
+    </array>
+
+    <array name="initial_slider_values_ebc">
+        <item>0</item>
+        <item>80</item>
+    </array>
+
+</resources>
